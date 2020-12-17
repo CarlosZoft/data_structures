@@ -2,10 +2,10 @@
 
 int main()
 {
-    float matriz[12][12];
+    double matriz[12][12], sum = 0;
     char escolha;
-    int aux = 10, aux1 = 1, aux2 = 11, sum = 0;
-    scanf("%c", escolha);
+    int aux = 10, aux1 = 1, aux2 = 11;
+    scanf("%c", &escolha);
 
     //preencher matriz
     for (int lin = 0; lin < 12; lin++)
