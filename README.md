@@ -2,7 +2,7 @@
 
 <h2>Descrição :</h2>
 
-Destinado para compartilhar alguns conhecimentos, enquanto estou aprendendo. Com uso de juizes eletrônicos, fundamentos de OO, Estrutura de dados e complexidade.
+Destinado para compartilhar alguns conhecimentos, enquanto estou aprendendo. Com uso de juizes eletrônicos, fundamentos de OO, Estrutura de dados/complexidade.
 
 <h2> Mais Sobre :</h2>
 
@@ -12,7 +12,7 @@ Uso de juizes online, como Urionlinejudge, CD-MOJ e Codeforces. com principio de
 
 <h2> Description :</h2>
 
-Intended to share some knowledge, while I am learning. Using electronic judges, OO fundamentals, Data structure and complexity.
+Intended to share some knowledge, while I am learning. Using electronic judges, OO fundamentals, Data structure/complexity.
 
 <h2> More about :</h2>
 
