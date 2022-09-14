@@ -2,63 +2,63 @@
 #include <stdlib.h>
 struct indices
 {
-    int antes;
-    int valor;
+    int before;
+    int value;
 };
 typedef struct indices pos;
 
-int busca(pos *vetor, int size, int number)
+int binarySearch(pos *arr, int size, int number)
 {
     int esq = -1, dir = size;
     while (esq < dir - 1)
     {
         int half = (esq + dir) / 2;
-        if (vetor[half].valor < number)
+        if (arr[half].value < number)
             esq = half;
         else
             dir = half;
     }
-    if (vetor[dir].valor == number)
-        return vetor[dir].antes;
+    if (arr[dir].value == number)
+        return arr[dir].before;
     else
         return -1;
 }
-void ordena(pos *vetor, int size)
+void sort(pos *arr, int size)
 {
-    int inicio, fim;
+    int start, end;
     pos *x;
     x = malloc(sizeof(pos));
-    for (inicio = 1; inicio < size; inicio++)
+    for (start = 1; start < size; start++)
     {
-        x[0] = vetor[inicio];
-        fim = inicio - 1;
-        while (fim >= 0 && vetor[fim].valor > x[0].valor)
+        x[0] = arr[start];
+        end = start - 1;
+        while (end >= 0 && arr[end].value > x[0].value)
         {
-            vetor[fim + 1] = vetor[fim];
-            fim--;
+            arr[end + 1] = arr[end];
+            end--;
         }
-        vetor[fim + 1] = x[0];
+        arr[end + 1] = x[0];
     }
 }
 
 int main(void)
 {
     pos *aux;
-    int size, sizeArray, sizeBusca, number, flag = 0;
-    scanf("%d %d", &sizeArray, &sizeBusca);
+    int size, sizeArray, sizeSearch, number, flag = 0;
+    scanf("%d %d", &sizeArray, &sizeSearch);
     aux = malloc(sizeArray * sizeof(pos));
 
-    for (size = 0; size < sizeArray; size++, aux[size].antes = size)
+    for (size = 0; size < sizeArray; size++, aux[size].before = size)
     {
-        scanf("%d", &aux[size].valor);
+        scanf("%d", &aux[size].value);
     }
 
-    ordena(aux, size);
+    sort(aux, size);
 
-    for (int i = 0; i < sizeBusca; i++)
+    for (int i = 0; i < sizeSearch; i++)
     {
         scanf("%d", &number);
-        printf("%d\n", busca(aux, sizeArray, number));
+        printf("%d\n", binarySearch(aux, sizeArray, number));
     }
     return 0;
 }

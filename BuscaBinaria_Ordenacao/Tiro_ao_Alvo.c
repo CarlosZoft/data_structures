@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <math.h>
 
-int busca(int *vetor, long long int size, double number)
+int binarySearch(int *arr, long long int size, double number)
 {
-    if (number > vetor[size - 1])
+    if (number > arr[size - 1])
         return size + 1;
     int esq = -1, dir = size;
     while (esq < dir - 1)
     {
         int half = (esq + dir) / 2;
-        if (vetor[half] < number)
+        if (arr[half] < number)
             esq = half;
         else
             dir = half;
@@ -45,7 +45,7 @@ int main()
         scanf("%lld %lld", &x, &y);
         a = sqrt((x * x) + (y * y));
 
-        b = busca(raio, circ, a);
+        b = binarySearch(raio, circ, a);
 
         if (b < circ)
             sum += (circ - b);
