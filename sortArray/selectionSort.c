@@ -7,28 +7,28 @@
 
 int main () {
 
-  int v[1000];
+  int arr[1000];
   
-  int i = 0;
-  while(scanf("%d", &v[i]) != EOF)i++;
+  int elementsLength = 0;
+  while(scanf("%d", &arr[elementsLength]) != EOF) elementsLength++;
 
   //sort
-  for(int l = 0; l < i - 1; l++){
+  for(int l = 0; l < elementsLength - 1; l++){
     int min = l;
     
-    for(int j = l+1; j < i ; j++){
-      if(less(v[j], v[min])){
+    for(int j = l+1; j < elementsLength ; j++){
+      if(less(arr[j], arr[min])){
         min = j;
       }
     }
-    exch(v[min], v[l]);
+    exch(arr[min], arr[l]);
   };
   
   //output
-  for(int out = 0; out < i ; out++)
+  for(int out = 0; out < elementsLength ; out++)
     (!out) ? 
-    printf("%d", v[out]) :
-    printf(" %d", v[out]);
+    printf("%d", arr[out]) :
+    printf(" %d", arr[out]);
   
   printf("\n");
 

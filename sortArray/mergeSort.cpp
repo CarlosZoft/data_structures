@@ -1,4 +1,4 @@
-void merge(int *vetor, int start, int half, int end) {
+void merge(int *arr, int start, int half, int end) {
 
     int * auxArray = new int[end - start + 1];
 
@@ -7,26 +7,26 @@ void merge(int *vetor, int start, int half, int end) {
     cont = 0; 
 
     while(i <= half && j <= end)
-      (vetor[i] < vetor[j]) ? 
-        auxArray[cont++] = vetor[i++] : 
-        auxArray[cont++] = vetor[j++];
+      (arr[i] < arr[j]) ? 
+        auxArray[cont++] = arr[i++] : 
+        auxArray[cont++] = arr[j++];
     
     while(i <= half)
-        auxArray[cont++] = vetor[i++];
+        auxArray[cont++] = arr[i++];
     
     while(j <= end) 
-        auxArray[cont++] = vetor[j++];
+        auxArray[cont++] = arr[j++];
     
     for(int i = start ; i <= end; ++i)
-        vetor[i] = auxArray[i-start];
+        arr[i] = auxArray[i-start];
     
     free(auxArray);
 }
-void mergeSort(int *vetor, int start, int end){
+void mergeSort(int *arr, int start, int end){
     if (start < end) {
         int half = (end+start)/2;
-        mergeSort(vetor, start, half);
-        mergeSort(vetor, half+1, end);
-        merge(vetor, start, half, end);
+        mergeSort(arr, start, half);
+        mergeSort(arr, half+1, end);
+        merge(arr, start, half, end);
     }
 }

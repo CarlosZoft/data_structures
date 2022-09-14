@@ -1,37 +1,34 @@
 #include <stdio.h>
 
-void ordenacao(int a, int v[1001])
+void sort(int size, int arr[1001])
 {
-    a -= 1;
-    int sub;
-    while (a)
+    int temp;
+    while (size)
     {
-        for (int i = 0; i < a; i++)
+        for (int i = 0; i < size; i++)
         {
-            if (v[i] > v[i + 1])
+            if (arr[i] > arr[i + 1])
             {
-                sub = v[i];
-                v[i] = v[i + 1]; //novo menor
-                v[i + 1] = sub;  //novo maior
+                temp = arr[i];
+                arr[i] = arr[i + 1]; //novo menor
+                arr[i + 1] = temp;  //novo maior
             }
         }
-        a--;
+        size--;
     }
 }
 
 int main(void)
 {
 
-    int vetor[1001], size = 0;
+    int arr[1001], size = 0;
 
-    while (scanf("%d", &vetor[size]) != EOF)
-    {
-        size++;
-    }
-    ordenacao(size, vetor);
+    while (scanf("%d", &arr[size]) != EOF) size++;
+    
+    sort(size - 1, arr);
     for (int i = 0; i < size; i++)
     {
-        (i != size - 1) ? printf("%d ", vetor[i]) : printf("%d\n", vetor[i]);
+        (i != size - 1) ? printf("%d ", arr[i]) : printf("%d\n", arr[i]);
     }
 
     return 0;
